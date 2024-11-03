@@ -10,10 +10,8 @@ input.onButtonPressed(Button.AB, function () {
         basic.showNumber(game.score())
     }
     basic.pause(500)
-    ciocan1.delete()
-    ciocan2.delete()
-    ciocan1 = game.createSprite(2, 1)
-    ciocan2 = game.createSprite(2, 2)
+    ciocan1.change(LedSpriteProperty.Y, -2)
+    ciocan2.change(LedSpriteProperty.Y, -2)
 })
 input.onButtonPressed(Button.B, function () {
     ciocan1.change(LedSpriteProperty.X, 1)
@@ -33,7 +31,7 @@ basic.forever(function () {
     bila = game.createSprite(randint(0, 4), 4)
 })
 basic.forever(function () {
-    if (input.runningTime() - timp_pornire >= 15000) {
+    if (input.runningTime() - timp_pornire >= 20000) {
         game.gameOver()
     }
 })
